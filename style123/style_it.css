@@ -1,0 +1,697 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial, sans-serif;
+}
+
+/* nawigacja strony z logo*/
+body {
+
+    background-color: #e0e0e0;
+}
+
+
+
+
+.menu {
+    width: 85%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 200px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logo:hover {
+    width: 180px;
+}
+
+
+.menu ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 30px 25px;
+    position: relative;
+    font-size: 19px;
+}
+
+
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.menu ul li:nth-last-child(1) {
+    font-size: 22px;
+}
+
+.menu ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+
+.menu ul li:hover::after {
+    width: 100%;
+}
+
+.menu ul li a:hover {
+    color: orange;
+}
+
+
+/* tło góra*/
+
+.tlo_gora {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/tlo.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* napis tło góra*/
+
+.text-box {
+    color: white;
+    position: absolute;
+    left: 120px;
+    bottom: 8%;
+}
+
+.text-box p {
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.text-box h1 {
+    font-size: 190px;
+    line-height: 160px;
+    margin-left: -10px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background: url(img/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 30s linear infinite;
+}
+
+@keyframes back {
+    100% {
+        background-position: 3000px 0;
+    }
+
+}
+
+/* przyciski tło góra*/
+.przyciski a {
+    width: 200px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    border-radius: 25px;
+    border: 2px solid black;
+    transition: .7s;
+}
+
+.przyciski a {
+    text-decoration: none;
+    color: white;
+}
+
+.przyciski a:hover {
+    color: orange;
+    background-color: black;
+}
+
+
+
+/*  ikonki font-awesome*/
+
+.ikony {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
+
+
+.ikony a img {
+    width: 55px;
+    display: block;
+    margin: 25px 5px;
+}
+
+
+.ikony img:hover {
+    width: 65px;
+
+}
+
+
+/* o_nas*/
+
+#portfolio {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+    background-repeat: no-repeat;
+    padding: 10px 0 30px;
+}
+
+#portfolio h1 {
+    font-weight: 400;
+    color: rgb(255, 130, 10);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-family: 'Saira Condensed', sans-serif;
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+
+}
+
+#portfolio .web img {
+    width: 100%;
+    height: 400px;
+}
+
+#portfolio .about {
+    color: black;
+    font-family: 'Saira', sans-serif;
+    font-weight: normal;
+    padding: 10px 20px 20px 0;
+    text-align: left;
+}
+
+#portfolio .about h2 {
+    font-size: 18px;
+    border-bottom: 2px solid gray;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    text-indent: 20px;
+}
+
+#portfolio .about p {
+    font-size: 12px;
+    padding-left: 20px;
+}
+
+#portfolio .project {
+    max-width: 1400px;
+    margin: 0 auto 20px;
+}
+
+#portfolio .project:nth-of-type(odd) {
+    background-color: white;
+}
+
+#portfolio .project:nth-of-type(even) {
+    background-color: rgb(255, 130, 10);
+}
+
+@media (min-width:768px) {
+
+    #portfolio h1 {
+        font-size: 40px;
+    }
+
+    #portfolio .about h2 {
+        font-size: 28px;
+        text-indent: 40px;
+    }
+
+    #portfolio .about p {
+        font-size: 18px;
+        padding-left: 40px;
+    }
+
+    #portfolio .project {
+        margin-bottom: 40px;
+    }
+
+}
+
+@media (orientation: landscape) {
+
+    .web,
+    .about {
+        width: 50%;
+        float: left;
+    }
+
+    .web img {
+        display: block;
+    }
+
+    #portfolio .project:nth-of-type(even) .web {
+        float: right;
+
+    }
+
+    #portfolio .project:nth-of-type(even) .about {
+        padding-right: 0;
+    }
+
+    #portfolio .project:nth-of-type(even) .about p {
+        padding-right: 20px;
+    }
+
+    #portfolio .project:nth-of-type(even) .about h2 {
+        text-indent: 0;
+        margin-left: 40px;
+    }
+
+
+}
+
+
+@media (orientation: landscape) and (min-width: 1400px) {
+    #portfolio h1 {
+        font-size: 36px;
+        font-weight: 400;
+        padding: 30px 0;
+    }
+
+    #portfolio .about h2 {
+        padding-top: 50px;
+        font-size: 28px;
+        text-indent: 40px;
+        margin-bottom: 50px;
+    }
+
+    #portfolio .about p {
+        font-size: 18px;
+        padding-left: 40px;
+        line-height: 180%;
+    }
+
+    #portfolio .project {
+        margin-bottom: 40px;
+    }
+}
+
+
+
+/* 3 ikonki poniżej headera*/
+
+.wrapper {
+    width: 100%;
+}
+
+.hobby {
+    max-width: 1200px;
+    margin: 0 auto;
+
+
+}
+
+.hobby .item {
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.hobby .item:nth-of-type(1) {
+    background-image: url(img/kontakt.jpg);
+}
+
+.hobby .item:nth-of-type(2) {
+    background-image: url(img/laptop.jpg);
+}
+
+.hobby .item:nth-of-type(3) {
+    background-image: url(img/naprawa.jpg);
+}
+
+.hobby .item p {
+    font-family: 'saira', sans-serif;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 4px black;
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 30px;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    font-weight: 400;
+    color: rgb(255, 130, 10);
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #fff;
+    margin: 0 0 30px;
+    border: solid 2px #e6e6e6;
+    box-sizing: border-box;
+    padding: 40px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);
+}
+
+@media (min-width:533px) {
+    .hobby .item {
+        float: left;
+        width: 33.333%;
+        height: 30vh;
+    }
+}
+
+@media (min-width:768px) {
+
+    .hobby h1 {
+        font-size: 30px;
+        margin-top: 60px;
+        margin-bottom: 20px;
+
+    }
+
+    .hobby .item p {
+        font-size: 30px;
+        padding: 15px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hobby .item {
+        float: left;
+        width: 33.333%;
+        line-height: 50vh;
+        overflow: hidden;
+    }
+
+    .hobby .item p {
+        line-height: 30vh;
+        opacity: 0;
+        transition: 1s;
+        cursor: default;
+    }
+
+    .hobby .item:hover p {
+        opacity: 1;
+
+    }
+
+    .hobby .item {
+        background-size: 90%;
+        transition: 1s;
+    }
+
+    .hobby .item:hover {
+        background-size: 120%;
+    }
+}
+
+/*nowe*/
+
+.box {
+    background-color: #fff;
+    margin: 0 0 30px;
+    border: solid 2px #e6e6e6;
+    box-sizing: border-box;
+    padding: 30px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);
+    text-transform: uppercase;
+}
+
+#tlo {
+    padding: 100px;
+    margin: 20px;
+}
+
+.hot h2 {
+    font-size: 36px;
+    font-weight: 400;
+    color: rgb(255, 130, 10);
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+#content {
+    padding-left: 25px;
+
+}
+
+/*nowe produkty wygląd*/
+
+#content img {
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+}
+
+.single {
+    width: 326px;
+}
+
+.container img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+@media(max-width:768px) {
+    .single {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+#content .product {
+    background-color: #fff;
+    border: solid 1px #e6e6e6;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+    border-radius: 55px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+}
+
+#content .product .text {
+    padding: 10px 10px 0px;
+}
+
+#content .product .text p.price {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 30px;
+    color: rgb(255, 130, 10);
+}
+
+#content .product .text .button {
+    text-align: center;
+    clear: both;
+
+}
+
+#content .product .text .button .btn {
+    margin-bottom: 30px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+    background-color: orange;
+    color: black;
+    border: 1px solid black;
+}
+
+#content .product .text .button .btn:hover {
+    background-color: black;
+    color: orange;
+}
+
+
+#content .product .text h3 {
+    text-align: center;
+    font-size: 20px;
+}
+
+#content .product .text h3 a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+/*kontakt*/
+
+.wrap {
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/contact.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: sans-serif;
+    height: 700px;
+    background-attachment: fixed;
+}
+
+#kontakt {
+    color: white;
+    text-transform: uppercase;
+    transition: all 4s ease-in-out;
+}
+
+#kontakt h1 {
+    padding-top: 50px;
+    font-size: 40px;
+    line-height: 10px;
+}
+
+#kontakt h2 {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+form {
+    margin-top: 50px;
+    transition: all 4s ease-in-out;
+}
+
+.formularz {
+    width: 300px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ff5722;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 16px;
+
+}
+
+:-ms-input-placeholder {
+    color: black;
+}
+
+input {
+    height: 45px;
+}
+
+.przycisk {
+    background: orange;
+    border-color: transparent;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.przycisk:hover {
+    background-color: black;
+    color: orange;
+    cursor: pointer;
+}
+
+
+/*  Products Categories & Categories Styles */
+#content .panel.sidebar-menu {
+    box-sizing: border-box;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu {
+    margin-bottom: 20px;
+}
+
+#content .panel.sidebar-menu ul.nav.category-menu li a {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#content .panel.sidebar-menu h3 {
+    padding: 5px 0px;
+    margin: 0px;
+}
+
+/*  Shop Products Tyles  */
+
+@media(max-width: 768px) {
+    .center-responsive {
+        width: 70%;
+        margin: 0px auto;
+    }
+}
+
+@media(max-width: 550px) {
+    .center-responsive {
+        width: 95%;
+        margin: 0px auto;
+    }
+}
+
+/*footer*/
+
+.footer {
+    background-color: #e0e0e0;
+    padding: 100px 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.footer ul a {
+    color: #999;
+    padding: 0;
+    text-decoration: none;
+}
+
+.footer ul a:hover {
+    color: #777;
+}
+
+.footer .media {
+    text-align: left;
+}
+
+.footer .media a {
+    margin: 0px 10px 0px 0px;
+    display: inline-block;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: bottom;
+    background-color: #555;
+    text-decoration: none;
+}
+
+.copyright {
+    background-color: black;
+    color: orange;
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.copyright p {
+    margin: 0;
+}

@@ -1,0 +1,1383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial, sans-serif;
+}
+
+/* nawigacja strony z logo*/
+
+body {
+    background-color: #e0e0e0;
+}
+
+
+
+.menu {
+    position: fixed;
+    width: 100%;
+    height: 130px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/sklep.png);
+    background-color: #000;
+    z-index: 1;
+
+}
+
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 200px;
+    width: 200px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.logo:hover {
+    width: 180px;
+}
+
+.hamburger {
+    display: none;
+}
+
+
+.menu ul li,
+.koszyk {
+    top: 15px;
+    left: 1500px;
+    list-style: none;
+    display: inline-block;
+    margin: 30px 25px;
+    position: relative;
+}
+
+
+.numer_nad_koszykiem {
+    background-color: #ffa500;
+    border-radius: 10px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 40px;
+    left: 2160px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.menu ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.menu ul li:hover::after {
+    width: 100%;
+}
+
+.menu ul li a:hover {
+    color: orange;
+}
+
+@media (max-width: 400px) {
+
+    .menu {
+        height: 70px;
+    }
+
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 45px;
+        width: 80px;
+    }
+
+    .hamburger {
+        display: inline-block;
+        position: absolute;
+        top: 25px;
+        left: 20px;
+    }
+
+    .menu ul li {
+        display: none;
+    }
+
+    .numer_nad_koszykiem {
+        background-color: #ffa500;
+        border-radius: 10px;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 20px;
+        left: 310px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 350px) {
+    .menu {
+        height: 60px;
+    }
+
+    .logo {
+        left: 35px;
+        width: 70px;
+    }
+
+    .hamburger {
+        top: 25px;
+        left: 15px;
+    }
+
+    .numer_nad_koszykiem {
+        width: 10px;
+        height: 10px;
+        top: 25px;
+        left: 295px;
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 290px) {
+    .numer_nad_koszykiem {
+        width: 9px;
+        height: 9px;
+        top: 25px;
+        left: 300px;
+        font-size: 8px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+
+    .menu {
+        height: 80px;
+    }
+
+    .hamburger {
+        display: inline-block;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+    }
+
+    .logo {
+        top: 25px;
+        left: 45px;
+        width: 90px;
+    }
+
+    .numer_nad_koszykiem {
+        width: 10px;
+        height: 10px;
+        top: 30px;
+        left: 360px;
+        font-size: 9px;
+    }
+}
+
+
+@media (min-width: 510px) and (max-width: 600px) {
+
+    .menu {
+        height: 80px;
+    }
+
+    .hamburger {
+        display: inline-block;
+        position: absolute;
+        top: 30px;
+        left: 35px;
+    }
+
+    .logo {
+        top: 20px;
+        left: 55px;
+        width: 100px;
+    }
+
+    .numer_nad_koszykiem {
+        width: 10px;
+        height: 10px;
+        top: 30px;
+        left: 470px;
+        font-size: 9px;
+    }
+}
+
+
+
+
+/* tło góra */
+
+.form {
+    position: absolute;
+    top: 180px;
+    left: 160px;
+}
+
+
+.szukac {
+    width: 300px;
+    height: 30px;
+    background-color: #000;
+    color: orange;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+.szukac_przycisk {
+    padding: 3px 20px;
+    border-radius: 5px;
+    background-color: orange;
+    color: black;
+}
+
+.koszyk {
+    width: 40px;
+    margin-left: 20px;
+}
+
+@media (max-width: 400px) {
+
+    .form {
+        position: absolute;
+        top: 90px;
+        left: 20px;
+    }
+
+    .szukac {
+        width: 280px;
+        height: 15px;
+        background-color: #000;
+        color: orange;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .szukac_przycisk {
+        padding: 2px 6px;
+        border: 1px solid black;
+        background-color: orange;
+        color: black;
+        font-size: 12px;
+    }
+
+    ::placeholder {
+        font-size: 12px;
+    }
+
+    .koszyk {
+        position: absolute;
+        margin: 0;
+        top: 30px;
+        left: 290px;
+        width: 25px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 350px) {
+
+    .form {
+        top: 80px;
+    }
+
+    .szukac {
+        width: 240px;
+        height: 15px;
+        padding: 8px;
+    }
+
+    .szukac_przycisk {
+        position: absolute;
+        top: 2px;
+        left: 246px;
+        padding: 1.5px 6px;
+        border: 1px solid black;
+        background-color: orange;
+        color: black;
+        font-size: 10px;
+    }
+
+    ::placeholder {
+        font-size: 10px;
+    }
+
+    .koszyk {
+        position: absolute;
+        margin: 0;
+        top: 30px;
+        left: 280px;
+        width: 20px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 290px) {
+    .form {
+        top: 80px;
+    }
+
+    .szukac {
+        width: 250px;
+        height: 15px;
+        padding: 8px;
+    }
+
+    .szukac_przycisk {
+        position: absolute;
+        top: 2px;
+        left: 255px;
+        padding: 1.5px 6px;
+        border: 1px solid black;
+        background-color: orange;
+        color: black;
+        font-size: 8px;
+    }
+
+    ::placeholder {
+        font-size: 8px;
+    }
+
+    .koszyk {
+        position: absolute;
+        margin: 0;
+        top: 30px;
+        left: 280px;
+        width: 20px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+    .form {
+        top: 100px;
+        left: 20px;
+    }
+
+    .szukac {
+        width: 320px;
+        height: 25px;
+        padding: 10px 20px;
+    }
+
+    .szukac_przycisk {
+        position: absolute;
+        top: 0px;
+        left: 330px;
+        padding: 2px 6px;
+        border: 1px solid black;
+        font-size: 12px;
+    }
+
+    ::placeholder {
+        font-size: 13px;
+    }
+
+    .koszyk {
+        position: absolute;
+        margin: 0;
+        top: 35px;
+        left: 340px;
+        width: 22px;
+    }
+}
+
+
+@media (min-width: 510px) and (max-width: 600px) {
+    .form {
+        top: 100px;
+        left: 50px;
+    }
+
+    .szukac {
+        width: 340px;
+        height: 25px;
+        padding: 10px 20px;
+    }
+
+    .szukac_przycisk {
+        position: absolute;
+        top: 0px;
+        left: 352px;
+        padding: 2px 15px;
+        border: 1px solid black;
+        font-size: 12px;
+    }
+
+    ::placeholder {
+        font-size: 13px;
+    }
+
+    .koszyk {
+        position: absolute;
+        margin: 0;
+        top: 35px;
+        left: 450px;
+        width: 25px;
+    }
+}
+
+/* rejestracja i logowanie */
+
+
+.rejestracja a,
+.logowanie a {
+    text-decoration: none;
+    color: orange;
+    font-size: 10px;
+}
+
+.rejestracja a:hover,
+.logowanie a:hover {
+    color: white;
+}
+
+
+.logowanie,
+.rejestracja {
+    position: absolute;
+    text-transform: uppercase;
+}
+
+.logowanie {
+    top: 5px;
+    right: 100px;
+    padding: 0 10px;
+}
+
+.rejestracja {
+    top: 5px;
+    right: 20px;
+}
+
+@media (max-width: 400px) {
+
+    .logowanie,
+    .rejestracja {
+        display: none;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+
+    .logowanie,
+    .rejestracja {
+        display: none;
+    }
+}
+
+
+/* pasek boczny */
+
+.boczny {
+    position: absolute;
+    width: 400px;
+    background-color: black;
+    float: left;
+    height: auto;
+    top: 250px;
+    left: 160px;
+    border-radius: 15px;
+    border: 2px solid orange;
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, .5);
+}
+
+.boczne_napisy {
+    background-color: #ffa500;
+    color: black;
+    font-size: 22px;
+    font-weight: bolder;
+    font-family: arial;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.kategorie {
+    text-align: center;
+}
+
+.kategorie li {
+    list-style: none;
+    margin: 30px 25px 45px 0;
+}
+
+
+.kategorie li a {
+    color: white;
+    padding: 8px;
+    margin: 5px;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: arial;
+}
+
+.kategorie li a:hover {
+    color: orange;
+    font-weight: bolder;
+    text-decoration: underline;
+
+
+}
+
+@media (max-width: 400px) {
+    .boczny {
+        width: 300px;
+        top: 150px;
+        left: 30px;
+    }
+
+    .boczne_napisy {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .kategorie li a {
+        padding: 0px;
+        margin: 0px;
+        font-size: 10px;
+    }
+
+    .kategorie li {
+        margin: 10px 25px 10px 0;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 350px) {
+    .boczny {
+        width: 280px;
+        left: 20px;
+        top: 140px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 290px) {
+    .boczny {
+        width: 280px;
+        left: 20px;
+        top: 140px;
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .boczny {
+        width: 340px;
+        left: 35px;
+        top: 160px;
+    }
+
+    .boczne_napisy {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .kategorie li a {
+        padding: 0px;
+        margin: 0px;
+        font-size: 12px;
+    }
+
+    .kategorie li {
+        margin: 12px 25px 10px 0;
+    }
+}
+
+@media (min-width: 510px) and (max-width: 600px) {
+    .boczny {
+        width: 440px;
+        left: 50px;
+        top: 160px;
+    }
+
+    .boczne_napisy {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .kategorie li a {
+        padding: 0px;
+        margin: 0px;
+        font-size: 14px;
+    }
+
+    .kategorie li {
+        margin: 12px 25px 10px 0;
+    }
+}
+
+
+
+
+/*produkty*/
+
+#tlo a {
+    text-decoration: none;
+}
+
+#tlo {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.zawartosc {
+    position: absolute;
+    top: 250px;
+    left: 650px;
+}
+
+#content img {
+    border-radius: 35px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+    width: 320px;
+    height: 300px;
+    margin-bottom: 40px;
+}
+
+#content .product {
+    border: solid 3px orange;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+    border-radius: 35px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+}
+
+p.price {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: rgb(255, 130, 10);
+}
+
+div.text .btn {
+    margin-bottom: 30px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+    margin-left: 75px;
+    background-color: orange;
+    color: black;
+    border: 1px solid black;
+}
+
+
+div.text .btn:hover {
+    background-color: black;
+    color: orange;
+}
+
+h3 {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 400px) {
+    .zawartosc {
+        top: 750px;
+        left: 65px;
+    }
+
+    .brak {
+        font-size: 18px;
+        margin-left: -20px;
+    }
+
+    #content img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    #content .product {
+        margin-bottom: 30px;
+    }
+
+    p.price {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    div.text .btn {
+        margin-bottom: 15px;
+        margin-left: 35px;
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 350px) {
+    .zawartosc {
+        top: 750px;
+        left: 45px;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 290px) {
+    .zawartosc {
+        top: 750px;
+        left: 40px;
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .zawartosc {
+        top: 750px;
+        left: 90px;
+        margin-top: 40px;
+    }
+
+    .brak {
+        font-size: 18px;
+        margin-left: -20px;
+    }
+
+    #content img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    #content .product {
+        margin-bottom: 30px;
+    }
+
+    p.price {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    div.text .btn {
+        margin-bottom: 15px;
+        margin-left: 35px;
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 510px) and (max-width: 600px) {
+    .zawartosc {
+        top: 750px;
+        left: 20px;
+        margin-top: 40px;
+    }
+
+    .brak {
+        font-size: 18px;
+        margin-left: -20px;
+    }
+
+    #content img {
+        width: 197px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    #content .product {
+        margin-bottom: 30px;
+    }
+
+    p.price {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    div.text .btn {
+        margin-bottom: 15px;
+        margin-left: 35px;
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* karta_klienta */
+
+.container_karty_sklepu {
+    background-color: white;
+    border: 0.01px solid rgba(0, 0, 0, 0.8px);
+    padding: 15px;
+    width: 1200px;
+    border-radius: 15px;
+}
+
+
+.container_karty_sklepu table img {
+    width: 80px;
+    height: 60px;
+    padding: 0 5px 0 10px;
+}
+
+
+.container_karty_sklepu input[type=submit],
+button {
+    margin-bottom: 30px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+    margin-left: 75px;
+    background-color: orange;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.container_karty_sklepu input[type=submit]:hover {
+    background-color: black;
+    color: orange;
+
+}
+
+#karta_klienta {
+    text-align: right;
+    padding: 15px;
+    background-color: orange;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+
+
+table.opcje {
+    text-align: center;
+    width: 100%;
+}
+
+tr.opcje {
+    text-align: center;
+}
+
+
+
+.check {
+    text-decoration: none;
+    color: black;
+
+}
+
+.suma {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: absolute;
+    left: 982px;
+    top: 600px;
+}
+
+@media (max-width: 400px) {
+    .container_karty_sklepu table img {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+
+    .container_karty_sklepu {
+        margin: 0;
+        margin-left: -60px;
+        padding: 0;
+        width: 350px;
+        border-radius: 15px;
+    }
+
+    .container_karty_sklepu input[type=submit],
+    button {
+        margin-bottom: 10px;
+        margin-left: 35px;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    table.opcje {
+        width: 25%;
+    }
+
+    #karta_klienta {
+        padding: 15px;
+        margin-bottom: 0px;
+        border-radius: 0px;
+    }
+}
+
+/* stopkaaaa*/
+
+.footer {
+    margin-top: 50%;
+    margin-left: -350px;
+    background-color: white;
+    padding: 100px 250px;
+    z-index: -1;
+}
+
+.footer h3 {
+    color: orange;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0px;
+    color: black;
+}
+
+.footer ul a {
+    color: black;
+    padding: 0;
+    text-decoration: none;
+}
+
+.footer ul a:hover {
+    color: orange;
+}
+
+.footer .media {
+    text-align: left;
+}
+
+.footer .media a {
+    margin: 0px 10px 0px 0px;
+    display: inline-block;
+    color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: bottom;
+    background-color: #555;
+    text-decoration: none;
+}
+
+.copyright {
+    background-color: black;
+    color: rgb(255, 165, 0);
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    width: 1900px;
+    margin-left: -650px;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+
+    .menu {
+        height: 130px;
+    }
+
+    .logo {
+        top: 20%;
+        left: 12%;
+        width: 15%;
+    }
+
+    .logo:hover {
+        width: 17%;
+    }
+
+    .numer_nad_koszykiem {
+        width: 15px;
+        height: 15px;
+        top: 48px;
+        left: 91%;
+        font-size: 12px;
+    }
+
+    .menu ul li {
+        left: 45%;
+        list-style: none;
+        display: inline-block;
+        margin: 40px 2%;
+        position: relative;
+    }
+
+    .menu ul li a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.5s;
+        font-size: 0.85rem;
+        margin-left: -2px;
+    }
+
+    .koszyk {
+        width: 3%;
+        position: absolute;
+        top: 20%;
+        left: 87%;
+    }
+}
+
+
+
+/* wyloguj */
+
+
+.login,
+.rejestracja_uzytkownika {
+    margin-top: 90px;
+    width: 100%;
+    float: left;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.login input[type=text],
+.login input[type=password] {
+    width: 160%;
+    padding: 3px 10px;
+    margin: 5px 0;
+}
+
+.login input[type=submit] {
+    padding: 5px 20px;
+    background: rgba(255, 165, 0, 0.9);
+    border: 0.01px solid rgba(255, 165, 0, 0.8);
+    color: black;
+    margin-top: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+
+.przycisk {
+    margin-top: 2%;
+}
+
+.register_box {
+    margin-top: 125px;
+    width: 100%;
+    float: left;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.register_box input[type=text],
+.register_box input[type=password] {
+    width: 80%;
+    padding: 3px 10px;
+    margin: 5px 30px;
+}
+
+.register_box input[type=submit] {
+    padding: 10px 15px;
+    background: rgba(28, 130, 199, 0.9);
+    border: 0.01px solid rgba(28, 130, 199, 0.8);
+    color: white;
+    margin: 15px 30px;
+}
+
+.register_box select {
+    width: 40%;
+    padding: 3px 10px;
+    margin: 5px 30px;
+}
+
+.register_box input[type=file] {
+    margin: 5px 30px;
+}
+
+.login_box {
+    margin-top: 90px;
+    width: 100%;
+    float: left;
+    padding: 15px;
+    background-color: #fff;
+}
+
+#profil img {
+    position: absolute;
+    top: -110px;
+    left: 700px;
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.rejestracja a,
+.logowanie a {
+    text-decoration: none;
+    color: orange;
+    font-size: 10px;
+}
+
+.rejestracja a:hover,
+.logowanie a:hover {
+    color: white;
+}
+
+
+.logowanie,
+.rejestracja {
+    position: absolute;
+    text-transform: uppercase;
+}
+
+.logowanie {
+    top: 5px;
+    right: 100px;
+    padding: 0 10px;
+}
+
+.rejestracja {
+    top: 5px;
+    right: 20px;
+}
+
+.awatar {
+    border-radius: 5px;
+}
+
+
+/*moje konto */
+
+.user_container {
+    width: 100%;
+    float: left;
+    margin-top: -300px;
+}
+
+.user_content {
+    margin-left: -300px;
+    width: 60%;
+    float: left;
+}
+
+.user_sidebar {
+    text-align: center;
+    width: 20%;
+    float: left;
+    background-color: #fff;
+    margin-left: 205px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user_sidebar ul {
+    list-style: none;
+    padding: 15px;
+    width: auto;
+    float: left;
+    margin-left: 100px;
+}
+
+.user_sidebar ul li {
+    padding: 3px 0;
+}
+
+.user_sidebar ul li a {
+    color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    margin: 5px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.user_sidebar ul li a:hover {
+    color: orange;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.main_wrapper {
+    width: 130%;
+    background-color: white;
+    padding: 500px;
+
+}
+
+.user_image img {
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 20%;
+}
+
+.tab_login1 {
+    margin-top: -130px;
+}
+
+strong {
+    margin: 5px 30px;
+}
+
+.zdjecie_awataru {
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* opis produktu w szeczolach*/
+
+.opis {
+    float: right;
+    margin-left: 100px;
+    width: 500px;
+}
+
+.naglowek_nazwa {
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 120px;
+    font-size: 50px;
+}
+
+.opis_produktu {
+    margin: 20px 0;
+}
+
+.cena_szczegoly {
+    font-size: 35px;
+    text-align: left;
+    color: black;
+}
+
+.przycisk_opis {
+    font-size: 22px;
+    width: 100%;
+    padding: 20px 0;
+    color: black;
+    background-color: orange;
+    transition: 0.5s;
+    margin-bottom: 60px;
+}
+
+.przycisk_opis:hover {
+    color: orange;
+    background-color: black;
+}
+
+.obrazek_szczegoly {
+    width: 600px;
+    height: 500px;
+    border-radius: 20%;
+    margin-left: 30px;
+}
+
+.wysylka {
+    margin-top: 100px;
+}
+
+.wysylka h2 {
+    margin-bottom: 30px;
+}
+
+.zakup_uslugi {
+    font-size: 16px;
+    color: red;
+    font-weight: bolder;
+}
+
+.faktura {
+    padding: 10px 30px;
+    margin-bottom: 50px;
+}
+
+.faktura_dane_1 {
+    margin: 20px 30px;
+}
+
+.faktura_dane_2 {
+    margin: 20px 104px;
+}
+
+.faktura_dane_3 {
+    margin: 20px 85px;
+}
+
+.faktura_dane_4 {
+    margin: 20px 117px;
+}
+
+.faktura_dane_5 {
+    margin: 20px 89px;
+}
+
+.faktura_dane_6 {
+    margin: 20px 85px;
+}
+
+.zamowienia {
+    float: right;
+    width: 50%;
+}
+
+.ilosc_faktura {
+    text-align: center;
+    margin: 50px 40px;
+}
+
+.konto_bankowe {
+    margin-top: 30px;
+}
+
+.info_h4 {
+    color: red;
+    font-weight: bolder;
+}
+
+.przycisk_wyslij {
+    margin-left: 100px;
+    text-align: center;
+    width: 90%;
+    height: 100px;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: orange;
+    background-color: white;
+}
+
+.przycisk_wyslij:hover {
+    background-color: black;
+    color: white;
+}
+
+.przycisk_wyslij a {
+    color: orange;
+    text-decoration: none;
+}
+
+.przycisk_wyslij a:hover {
+    color: white;
+}

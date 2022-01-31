@@ -1,0 +1,40 @@
+<?php
+
+$name    = $_POST['name'];
+$email   = $_POST['email'];
+$phone = $_POST['contact'];
+$country= $_POST['country'];
+$city = $_POST['city'];
+$address = $_POST['address'];
+$liczba_prod = $_POST['ilosc_prod'];
+$cena_prod = $_POST['cena_prod'];
+
+$name_firma = $_POST['name_firma'];
+$address_firma = $_POST['adress_firma'];
+$numer_konta = $_POST['numer_konta'];
+$tytul = $_POST['tytul'];
+
+$to      = 'it.stelaaa@gmail.com';
+$to2 = stripslashes(trim($_POST["email"]));
+$subject = 'Nowy e-mail od ' . " " . $email;
+$message = "Ja $name zakupiłem $liczba_prod produktów na stronie it_STELA \n" . 
+           "Moje zakupy kosztują: $cena_prod \n" .
+           " \n" .
+           "Pieniądze trzeba przelać na: $numer_konta , w tytule przelewu wpisać:  $tytul \n" .
+           " \n" .
+           "Dane kupującego: \n" .
+           "Imię: $name , Adres e-mail: $email , Telefon: $phone \n" .
+           "Kraj: $country , Miasto: $city , Adres: $address \n" .
+           " \n" .
+           "Dane firmy: \n" .
+           "Nazwa firmy: $name_firma , Adres e-mail: it.stelaaa@gmail.com , Telefon: 512 232 322 \n" .
+           "Kraj: Polska , Miasto: Kraków , Adres firmy: $address_firma";
+
+
+
+mail($to, $_POST["email"], $subject, $message);
+
+echo 'Dziękujemy za zakup naszych towarów, oczekujemy na płatność';
+echo 'Na twój adres e-mail został wysłany e-mail z fakturą.';
+echo 'Adres e-mail: ' . $email;
+?>
